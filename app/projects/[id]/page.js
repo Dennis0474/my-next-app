@@ -52,20 +52,26 @@ link: "https://github.com/Dennis0474/to-do-list"
 },
 ];
 
-  export default function Projects() {
+export default async function ProjectDetail({ params }) {
+    const { id } = await params;
+    const project = projects.find(p => p.id === Number(id));
+
+    if (!project) {
+      return (
+        <div className="min-h-screen bg-gray-900 text-white p-10">
+          <h1 className="text-4xl font-bold text-red-400">Project not found!</h1>
+          <Link href="/projects" className="text-blue-400 hover:underline mt-4 block">Back to Projects</Link>
+        </div>
+      );
+    }
+
     return (
-      <div className="grid grid-cols-1 gap-6">
-        {projects.map(project => (
-          <div key={project.id} className="bg-gray-800 p-6 rounded-lg ">
-          <h2 className="text-2xl text-white font-bold mb-2">{project.title}</h2>
-          <p className="text-gray-400 mb-2">{project.description}</p>
-          <p className="text-blue-400 mb-4">{project.tech}</p>
-          <div className="flex gap-4">
-            <Link href={`/projects/${project.id}`} className="bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">View Details</Link>
-            <a href={project.link} className="bg-blue-700 px-4 py-2 rounded hover:bg-gray-600" target="_blank">GitHub</a>
-          </div>
-          </div>
-        ))}
+      <div>
+        <Link href="/projects" className="text-blue-400 hover:underline mb-6 block">Back to Projects</Link>
+          <h1 className="text-4xl font-bold text-blue-400 mb-4">{project.title}</h1>
+          <p className="text-blue-400 text-lg mb-4">{project.description}</p>
+          <p className="text-blue-400 mb-6">Tech: {project.tech}</p>
+          <a href={project.link} className="bg-blue-500 text-white px-6 py-3 rounded-lg ml-1 hover:bg-blue-600" target="_blank">View on GitHub</a>
       </div>
-    );
+    ); 
   }
