@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+export const metadata = {
+title: "Dennis Dev - Frontend Developer",
+description: "Welcome to my portfolio. I build modern apps with React and Next.js.",
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center text-white">

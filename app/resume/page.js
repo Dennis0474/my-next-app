@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Resume — Dennis Dev',
+  description: 'Frontend Developer resume — Dennis. Skills, projects and experience.',
+};
+
 export default function Resume() {
   const skills = {
     languages: ['HTML', 'CSS', 'JavaScript'],

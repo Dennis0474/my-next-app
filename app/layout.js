@@ -1,6 +1,11 @@
 import Link from "next/link";
 import "./globals.css";
 
+export const metadata = {
+  title: "Dennis Dev - Frontend Developer",
+  description: "Frontend Developer Skilled in React and Next.js. Based in Ilorin Nigeria.",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

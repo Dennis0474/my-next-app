@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: 'Projects — Dennis Dev',
+  description: 'Check out my frontend development projects built with React and Next.js.',
+};
+
 const projects = [
   {
 id: 1,

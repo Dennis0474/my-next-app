@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'About — Dennis Dev',
+  description: 'Learn more about Dennis, a self-taught Frontend Developer from Lagos Nigeria.',
+};
+
 export default function About() {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-10">
